@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería El Pepe</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="promo"><p>¡Con la compra de 3 o más productos tenes un descuento del 20%!</p></div>
+    <nav class="nav">
+        <img class="logo" src="img/logo.png" alt="">
+        <ul>
+            <li>Helados</li>
+            <li>Contacto</li>      
+            <i class="fa-solid fa-cart-shopping"></i>
+        </ul>
+    </nav>
+
+    <header>
+        <img class="wallpaper" src="img/wallpaper.jpg" alt="Background de helados">
+        <img class="logo" src="img/logo.png" alt="Logo">
+    </header>
+
+    <main>
+        <div class="grid">
+            <div class="envases">
+                <h2>¡Selecciona el envase!</h2>
+                <div class="envaseContainer">
+                    <div class="envase" id="1-4kg">
+                        <img src="img/envase.png" alt="Envase de helado 1/4kg">
+                        <span>1/4kg</span>
+                    </div>
+                    <div class="envase" id="1-2kg">
+                        <img src="img/envase.png" alt="Envase de helado 1/2kg">
+                        <span>1/2kg</span>
+                    </div>
+                    <div class="envase" id="1kg">
+                        <img src="img/envase.png" alt="Envase de helado 1kg">
+                        <span>1kg</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sabores">
+                <h2>¡Selecciona 3 sabores!</h2>
+                <form name="form1" class="saboresContainer">
+                    <figure>
+                        <img src="img/sabor-chocolate.jpg" alt="">
+                        <figcaption>Chocolate</figcaption>
+                        <input type="checkbox" class="sabor" id="chocolate" onclick="return checkLimit()">
+                    </figure>
+                    <figure>
+                        <img src="img/sabor-cremaamericana.jpg" alt="">
+                        <figcaption>Crema americana</figcaption>
+                        <input type="checkbox" class="sabor" id="crema americana" onclick="return checkLimit()">
+                    </figure>
+                    <figure>
+                        <img src="img/sabor-dulcedeleche.jpg" alt="">
+                        <figcaption>Dulce de leche</figcaption>
+                        <input type="checkbox" class="sabor" id="dulce de leche" onclick="return checkLimit()">
+                    </figure>
+                    <figure>
+                        <img src="img/sabor-frutilla.jpg" alt="">
+                        <figcaption>Frutilla</figcaption>
+                        <input type="checkbox" class="sabor" id="frutilla" onclick="return checkLimit()">
+                    </figure>
+                    <figure>
+                        <img src="img/sabor-granizado.jpg" alt="">
+                        <figcaption>Granizado</figcaption>
+                        <input type="checkbox" class="sabor" id="granizado" onclick="return checkLimit()">
+                    </figure>
+                    <figure>
+                        <img src="img/sabor-vainilla.jpg" alt="">
+                        <figcaption>Vainilla</figcaption>
+                        <input type="checkbox" class="sabor" id="vainilla" onclick="return checkLimit()">
+                    </figure>
+                </form>
+            </div>
+
+            <div class="producto">
+                <div>
+                    <h3>Mi producto</h3>
+                </div>
+
+                <div class="productoDatos">
+                    <div class="productoEnvase">
+                        <img src="img/envase.png" alt="">
+                        <span id="productoEnvase">-</span>
+                    </div>
+
+                    <div class="productoSabores">
+                        <h4>Sabores</h4>
+                        <ul id="productoSabores">
+                            <li>-</li>
+                            <li>-</li>
+                            <li>-</li>
+                        </ul>
+                        <h4>Precio</h4>
+                        <p id="productoPrecio">$</p>
+                    </div>
+                </div>
+
+                <span class="btn">
+                    <h4>Agregar al carrito</h4>
+                </span>
+            </div>
+
+            <!-- <div class="carrito">
+                <div>Carrito</div>
+
+                <div class="carritoProductos">
+
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

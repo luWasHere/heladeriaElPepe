@@ -1,0 +1,10 @@
+$colorBlue: rgb(53, 121, 199);
+$colorYellow: rgb(255, 200, 50);
+
+@mixin flex ($dir, $wrap, $alignI, $justifyC) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    align-items: $alignI;
+    justify-content: $justifyC;
+}

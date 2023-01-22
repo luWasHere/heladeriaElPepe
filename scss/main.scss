@@ -1,0 +1,269 @@
+@import "_mixins_n_vars";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+@font-face {
+    font-family: "ElPepe";
+    src: url("../src/Comix\ Loud.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 200px;
+}
+
+.promo {
+    @include flex (initial, initial, center, center);
+    padding: 10px 0;
+    background: $colorBlue;
+    color: #fff;
+    font-size: .8rem;
+    position: relative;
+    z-index: 9999
+}
+.nav {
+    @include flex (initial, initial, center, space-between);
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+
+    box-shadow: 0px 6px 31px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 6px 31px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 6px 31px 0px rgba(0,0,0,0.2);
+    background: #fff;
+
+    .logo {
+        height: 50px;
+    }
+    ul {
+        list-style: none;
+        @include flex (initial, initial, center, center);
+
+        li, i {
+            margin-left: 30px;
+            color: #444;
+        }
+        li {
+            font-size: 1.3rem;
+        }
+        i {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+header {
+    height: 40vh;
+    position: relative;
+    @include flex (initial, initial, center, center);
+    img.wallpaper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        filter: brightness(50%) opacity(.9) blur(2px);
+    }
+    img.logo {
+        position: relative;
+        width: 35vh;
+    }
+
+    margin-bottom: 50px;
+}
+
+.grid {
+    margin: auto;
+    display: grid;
+    width: 95%;
+    max-width: 1000px;
+    grid-template-columns: auto auto;
+    gap: 50px;
+}
+
+h2 {
+    font-size: 2rem;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.envaseContainer {
+    @include flex (initial, wrap, center, center);
+    margin: auto;
+    gap: 30px 70px;
+    max-width: 300px;
+    .envase {
+        @include flex (column, initial, center, center);
+        position: relative;
+        span {
+            position: absolute;
+            font-size: 1.5em;
+            color: $colorYellow;
+            font-weight: 900;
+            text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1);
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:nth-child(1) {
+            width: 100px;
+            font-size: 12px;
+        }
+        &:nth-child(2) {
+            width: 120px;
+            font-size: 14px;
+        }
+        &:nth-child(3) {
+            width: 140px;
+            font-size: 16px;
+        }
+        &::after {
+            content: " ";
+            @include flex (initial, initial, center, center);
+            background: url("../img/check.ico") no-repeat;
+            background-size: cover;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            opacity: 0;
+            top: 10px;
+            right: 10px;
+            transform: (scale(90%));
+        }
+        &.active::after {
+            top: -10px;
+            right: -10px;
+            opacity: 1;
+            transform: (scale(100%));
+            transition: .2s;
+        }
+    }
+}
+
+.saboresContainer {
+    @include flex (initial, wrap, flex-start, center);
+    gap: 30px;
+    margin: auto;
+    max-width: 400px;
+    figure {
+        @include flex (column, initial, center, center);
+        text-align: center;
+        max-width: 100px;
+        position: relative;
+
+        img {
+            border-radius: 12px;
+        }
+        figcaption {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        .sabor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        &::after {
+            content: " ";
+            @include flex (initial, initial, center, center);
+            background: url("../img/check.ico") no-repeat;
+            background-size: cover;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            opacity: 0;
+            top: 0px;
+            right: 0px;
+            transform: (scale(90%));
+            transition: .2s;
+        }
+        &:has(.sabor:checked)::after {
+            top: -10px;
+            right: -10px;
+            opacity: 1;
+            transform: (scale(100%));
+            transition: .2s;
+        }
+    }
+}
+
+.producto {
+    grid-column: 1 / 3;
+    margin: auto;
+    @include flex (column, initial, center, initial);
+    width: 100%;
+    max-width: 500px;
+    height: 320;
+
+    background: #ccc;
+    border-radius: 12px;
+    color: #555;
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    .productoDatos {
+        @include flex (initial, initial, flex-start, center);
+        gap: 30px;
+        width: 100%;
+        background: #eee;
+        padding: 40px 0px 20px 0px;
+
+        .productoEnvase {
+            @include flex (column, initial, center, center);
+            position: relative;
+            img {
+                width: 140px;
+            }
+            span {
+                position: absolute;
+                font-size: 1.5rem;
+                color: $colorYellow;
+                font-weight: 900;
+                text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1), 0px 0px 1px rgba(0,0,0,1);
+            }
+        }
+        .productoSabores {
+            h4 {
+                font-size: 1rem;
+            }
+            ul {
+                list-style: none;
+                margin-bottom: 20px;
+            }
+            li, p {
+                font-size: .9rem;
+                font-weight: 300;
+            }
+        }
+    }
+    .btn {
+        width: 100%;
+        padding: 10px 0px 20px 0px;
+        background: #eee;
+        border-radius: 0px 0px 12px 12px;
+        @include flex (initial, initial, center, center);
+
+        h4 {
+            background: #ccc;
+            text-align: center;
+            width: 40%;
+            min-width: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+
+            &:hover {
+                cursor: pointer; 
+            }
+        }
+
+    }
+}
+
