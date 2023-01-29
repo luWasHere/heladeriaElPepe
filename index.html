@@ -13,15 +13,31 @@
 </head>
 
 <body>
-    <div class="promo"><p>¡Con la compra de 3 o más productos tenes un descuento del 20%!</p></div>
     <nav class="nav">
         <img class="logo" src="img/logo.png" alt="">
         <ul>
             <li>Helados</li>
             <li>Contacto</li>      
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-cart-shopping" id="carritoNavBtn"><span id="heladosConteo" style="opacity: 0;"></span></i>
         </ul>
     </nav>
+
+    <div class="carrito" style="right: -100%;">
+        <ul id="carritoLista">
+            <li class="carritoTabla">
+                <p>Envase</p>
+                <p>Sabores</p>
+                <p>Precio</p>
+            </li>
+        </ul>
+        <div class="carritoBotones">
+            <div>
+                <span class="carritoBtn" id="comprarBtn">Comprar</span>
+                <span class="carritoBtn" id="agregarMasBtn">Agregar más</span>
+            </div>
+            <span id="carritoTotal">Total: $0</span>
+        </div>
+    </div>
 
     <header>
         <img class="wallpaper" src="img/wallpaper.jpg" alt="Background de helados">
@@ -59,12 +75,12 @@
                     <figure>
                         <img src="img/sabor-cremaamericana.jpg" alt="">
                         <figcaption>Crema americana</figcaption>
-                        <input type="checkbox" class="sabor" id="crema americana" onclick="return checkLimit()">
+                        <input type="checkbox" class="sabor" id="cremaAmericana" onclick="return checkLimit()">
                     </figure>
                     <figure>
                         <img src="img/sabor-dulcedeleche.jpg" alt="">
                         <figcaption>Dulce de leche</figcaption>
-                        <input type="checkbox" class="sabor" id="dulce de leche" onclick="return checkLimit()">
+                        <input type="checkbox" class="sabor" id="dulceDeLeche" onclick="return checkLimit()">
                     </figure>
                     <figure>
                         <img src="img/sabor-frutilla.jpg" alt="">
@@ -85,7 +101,7 @@
             </div>
 
             <div class="producto">
-                <div>
+                <div class="title">
                     <h3>Mi producto</h3>
                 </div>
 
@@ -103,25 +119,18 @@
                             <li>-</li>
                         </ul>
                         <h4>Precio</h4>
-                        <p id="productoPrecio">$</p>
+                        <p id="productoPrecio">$0</p>
                     </div>
                 </div>
 
-                <span class="btn">
+                <span class="btn" id="btnAgregarCarrito">
                     <h4>Agregar al carrito</h4>
                 </span>
             </div>
-
-            <!-- <div class="carrito">
-                <div>Carrito</div>
-
-                <div class="carritoProductos">
-
-                </div>
-            </div> -->
         </div>
     </main>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
