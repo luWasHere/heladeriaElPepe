@@ -311,14 +311,18 @@ agregarMasBtn.addEventListener('click', () => {
 
 let comprarBtn = document.getElementById('comprarBtn');
 comprarBtn.addEventListener('click', () => {
-    swal('¡Compra realizada!');
-    heladoVistaPrevia.resetear();
-    helados = 0;
-    contadorCarrito();
-    total = 0;
-    totalCarrito.innerHTML = `Total: $${total}`;
-    carritoLista.innerHTML = '<li class="carritoTabla"><p>Envase</p><p>Sabores</p><p>Precio</p></li>';
-    let carrito = document.querySelector('.carrito');
-    carrito.style.right = '-100%';
-    LSadd();
+    if (carritoLista.innerHTML == '<li class="carritoTabla"><p>Envase</p><p>Sabores</p><p>Precio</p></li>') {
+        swal('¡No hay productos para comprar!');
+    } else {
+        swal('¡Compra realizada!');
+        heladoVistaPrevia.resetear();
+        helados = 0;
+        contadorCarrito();
+        total = 0;
+        totalCarrito.innerHTML = `Total: $${total}`;
+        carritoLista.innerHTML = '<li class="carritoTabla"><p>Envase</p><p>Sabores</p><p>Precio</p></li>';
+        let carrito = document.querySelector('.carrito');
+        carrito.style.right = '-100%';
+        LSadd();
+    }
 });
